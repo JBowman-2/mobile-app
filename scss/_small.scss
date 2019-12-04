@@ -21,9 +21,6 @@ header {
     color: white;
 }
 
-header h1, h2 {
-    display: none;
-}
 
 header figure.logo {
     float: left;
@@ -37,51 +34,9 @@ header figure.logo img {
 
 
 
-/* navigation */
 
-nav button {
-    margin: .2rem $gutter;
-    background-color: transparent;
-    border: none;
-    font-size: 1.6rem;
-    color: lighten($primaryColor, 45%);
-}
 
-nav {
-    background-color: $primaryColor;;
 
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li a{
-    display: block;
-    padding: .8rem $gutter;
-    text-decoration: none;
-    color: white;
-    background-color: lighten($primaryColor, 20%);
-    border-top: 1px solid rgba(0,0,0,0.3);
-
-}
-
-nav ul li.active a { 
-    font-weight: $heavyWeight;
-    color: darken($primaryColor, 25%);
-    background-color: lighten($primaryColor, 40%)
-    
-}
-
-nav ul li a:hover {
-    background-color: darken($subColor, 10%);
-}
-
-nav ul.hide {
-    display: none;
-}
 
 
 /* main */
@@ -91,19 +46,27 @@ main {
     
 }
 
+
 figure {
-    margin: 0px;
+    margin: 4% 4% 0 4%;
+    width: 90%;
+    align-content: center;
 }
 
-div.story figure img {
+div.hotels figure img {
     display: flex;
     width: 100%;
-    border: 2px solid black;
 }
 
+
 figcaption {
+    position: relative;
     text-align: center;
-    padding-top: 10px;
+    padding: 9px;
+    bottom: 35px;
+    background: rgba(0,0,0,.6);
+    color: white;
+ 
 }
 
 main h1 {
@@ -113,18 +76,44 @@ main h1 {
 
 
 
-main div.story {
+
+
+div.hotels {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     column-gap: 25px;
     row-gap: 25px;
     margin: $gutter;
+    margin-bottom: 6rem;
+    
+}
 
-    figure:nth-child(1){
-        grid-column: 1 / span 2;
+div.hotels section {
+    background-color: orange;
+    padding-bottom: 4%;
+    border: 2px solid black;
+    
+}
+    
 
-    }
+
+div.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    margin-left: 2%;
+}
+
+div.info span ion-icon {
+    float: left;
+    font-size: 2rem;
+}
+
+div.info span p {
+    font-size: 1rem;
+    padding-left: 2.2rem;
+    margin: 0;
 }
   
 .clearfix:after {
@@ -133,11 +122,55 @@ main div.story {
     clear: both;
 }
 
+/* navigation */
 
-footer {
-    text-align: left;
-    color: $primaryColor;
+
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+
 }
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+    background-color: lighten($primaryColor, 20%);
+    margin: 0px;
+
+}
+
+nav li {flex-basis: 33.3%}
+
+nav ul li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+   
+    padding: 15px;
+}
+
+nav ul li.active a { 
+    font-weight: $heavyWeight;
+    color: darken($primaryColor, 25%);
+    background-color: lighten($primaryColor, 40%) 
+}
+
+nav ul li a:hover {
+    background-color: darken($subColor, 10%);
+}
+nav ul li a {
+    text-align: center;
+    font-size: .8rem;
+}
+
+nav ul li a ion-icon {
+    font-size: 2rem;
+}
+
 
 footer div.copy {
     text-align: center;
