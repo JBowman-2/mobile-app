@@ -16,9 +16,12 @@ body {
 /* header */
 
 header {
-    background-color: $subColor;
+    background-color: lighten($primaryColor, 20%);
     padding: .5rem $gutter;
     color: white;
+    text-align: center;
+    color: black;
+    font-weight: $heavyWeight;
 }
 
 
@@ -43,7 +46,7 @@ header figure.logo img {
 main {
     padding: 0px;
     margin: 0px;
-    
+    background-color: lightgray;
 }
 
 
@@ -52,6 +55,7 @@ main {
 main h1 {
     margin-top: 0px;
     padding: $gutter 0 0 $gutter;
+    margin-bottom: 10px;
 }
 
 
@@ -64,16 +68,20 @@ div.hotels {
     grid-template-rows: auto;
     column-gap: 25px;
     row-gap: 25px;
-    margin: $gutter;
+    margin-top: 0;
     margin-bottom: 6rem;
     
 }
 
 div.hotels section {
-    background-color: orange;
+    background-color: $subColor;
     padding-bottom: 4%;
     border: 2px solid black;
     
+}
+
+div.hotels section figure {
+    margin-bottom: .5rem;
 }
 
 figure {
@@ -102,12 +110,13 @@ figcaption {
 div.info {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 25px;
   
     
 }
 
 div.info span {
-    margin: 2%;
+    margin-left: 4%;
 }
 
 div.info span ion-icon {
@@ -118,7 +127,7 @@ div.info span ion-icon {
 
 div.info span p {
     font-size: .9rem;
-    padding-left: 2rem;
+    padding-left: 2.6rem;
     margin: 0;
 
 }
